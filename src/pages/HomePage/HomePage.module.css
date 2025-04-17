@@ -1,0 +1,22 @@
+.container {
+  padding: 20px;
+}
+
+.title {
+  text-align: left;
+  color: #ffd700;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+.loading,
+.error {
+  text-align: left;
+  font-size: 20px;
+  color: #ffffff;
+  margin-top: 50px;
+}
+
+.error {
+  color: #ff6b6b;
+}

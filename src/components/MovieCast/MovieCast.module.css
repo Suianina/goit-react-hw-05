@@ -1,0 +1,54 @@
+.container {
+  padding: 20px;
+}
+
+.title {
+  margin: 0 0 20px;
+  color: #ffffff;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.item {
+  background-color: #112240;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+}
+
+.photo {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.name {
+  margin: 0 0 5px;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.character {
+  margin: 0;
+  color: #ccd6f6;
+  font-size: 14px;
+}
+
+.loading,
+.error {
+  text-align: center;
+  font-size: 20px;
+  color: #ffffff;
+  margin-top: 50px;
+}
+
+.error {
+  color: #ff6b6b;
+}

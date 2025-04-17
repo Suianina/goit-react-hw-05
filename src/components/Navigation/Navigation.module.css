@@ -1,0 +1,25 @@
+.nav {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background-color: #112240;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.link:hover {
+  color: #ffd700;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
+}
+
+.active {
+  color: #ffd700;
+  font-weight: bold;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
+}
