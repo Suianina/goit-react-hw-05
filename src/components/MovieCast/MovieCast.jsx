@@ -8,9 +8,8 @@ const MovieCast = () => {
   const [cast, setCast] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
   useEffect(() => {
-    const getMovieCast = async () => {
+    const getCast = async () => {
       try {
         const data = await fetchMovieCast(movieId);
         setCast(data.cast);
@@ -20,30 +19,31 @@ const MovieCast = () => {
         setLoading(false);
       }
     };
-
-    getMovieCast();
+    getCast();
   }, [movieId]);
 
   if (loading) return <div className={styles.loading}>Loading...</div>;
   if (error) return <div className={styles.error}>Error: {error}</div>;
+  if (cast.length === 0)
+    return <div className={styles.noCast}>No cast information available</div>;
 
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Cast</h2>
       <ul className={styles.list}>
-        {cast.map(({ id, name, character, profile_path }) => (
-          <li key={id} className={styles.item}>
+        {cast.map(actor => (
+          <li key={actor.id} className={styles.item}>
             <img
               src={
-                profile_path
-                  ? `https://image.tmdb.org/t/p/w200${profile_path}`
-                  : 'https://via.placeholder.com/200x300?text=No+Photo'
+                actor.profile_path
+                  ? `https://image.tmdb.org/t/p/w200${actor.profile_path}`
+                  : 'https://placehold.co/200x300/112240/ffffff?text=No+Photo'
               }
-              alt={name}
+              alt={actor.name}
               className={styles.photo}
             />
-            <h3 className={styles.name}>{name}</h3>
-            <p className={styles.character}>Character: {character}</p>
+            <p className={styles.name}>{actor.name}</p>
+            <p className={styles.character}>{actor.character}</p>
           </li>
         ))}
       </ul>

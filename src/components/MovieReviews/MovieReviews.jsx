@@ -26,7 +26,8 @@ const MovieReviews = () => {
 
   if (loading) return <div className={styles.loading}>Loading...</div>;
   if (error) return <div className={styles.error}>Error: {error}</div>;
-  if (reviews.length === 0) return <div className={styles.noReviews}>No reviews yet</div>;
+  if (reviews.length === 0)
+    return <div className={styles.noReviews}>No reviews yet</div>;
 
   return (
     <div className={styles.container}>
@@ -43,4 +44,4 @@ const MovieReviews = () => {
   );
 };
 
-export default MovieReviews; 
+export default MovieReviews;
