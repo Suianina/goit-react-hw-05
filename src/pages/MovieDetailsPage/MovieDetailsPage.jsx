@@ -58,13 +58,13 @@ const MovieDetailsPage = () => {
           <p className={styles.overview}>{movie.overview}</p>
           <div className={styles.links}>
             <button
-              onClick={() => navigate('cast')}
+              onClick={() => navigate('cast', { state: location.state })}
               className={styles.linkButton}
             >
               Cast
             </button>
             <button
-              onClick={() => navigate('reviews')}
+              onClick={() => navigate('reviews', { state: location.state })}
               className={styles.linkButton}
             >
               Reviews
@@ -72,7 +72,7 @@ const MovieDetailsPage = () => {
           </div>
         </div>
       </div>
-      <Outlet />
+      <Outlet context={location.state} />
     </div>
   );
 };

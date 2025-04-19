@@ -20,11 +20,16 @@
   transform: translateX(5px);
   box-shadow: 0 0 10px rgba(255, 215, 0, 0.1);
 }
-.link {
+.button {
   text-decoration: none;
   color: inherit;
   display: block;
   width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
 }
 .title {
   margin: 0;
